@@ -1,7 +1,7 @@
 name = IE Warning
+
 description = "Adds a banner prompting IE users to upgrade to a better browser."
 core = "7.x"
 version = "7.x-1.0"
-package = custom
 
-;datestamp = ""
+package = Custom
