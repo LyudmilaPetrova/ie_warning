@@ -1,0 +1,14 @@
+<?php
+
+function ie_warning_preprocess_page(&$variables) {
+	global $base_root;
+	$path = $base_root.'/'.drupal_get_path('module', 'ie_warning');
+	
+	drupal_add_html_head(array(
+	  '#type' => 'markup',
+	  '#markup' => PHP_EOL.'<!--[if lte IE 7]>' .
+						'<script type="text/javascript" src="'.$path.'/ie/warning.js"></script>'.
+						'<script type="text/javascript">window.onload = function() {ie_warning("'.$path.'/ie/");}</script>'.
+					'<![endif]-->'.PHP_EOL,
+	), 'ie_warning');
+}
